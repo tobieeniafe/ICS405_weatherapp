@@ -1,17 +1,41 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Weather App</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content padding class="home">
+  <ion-grid *ngIf="!weather && !error">
+    <img src="http://customerservice.ihg.com/ihg/images/loader.gif" class="loader">
+  </ion-grid>
+  <ion-grid *ngIf="error" class="error">
+    <h1>{{errorMessage}}</h1>
+  </ion-grid>
+  <ion-grid *ngIf="weather">
+    <ion-row>
+      <ion-col width-50 offset-25>
+        <h2 class="location">{{weather.name}}, {{weather.sys.country}}</h2>
+        <h3 class="desc">{{weather.weather[0].main}}</h3>
+        <div class="icon">
+          <img src="http://www.pngmart.com/files/3/Weather-PNG-HD.png">
+        </div>
+        <h1 class="temp">{{weather.main.temp - 273.15 | number : '1.1-1'}}&deg;C</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-100>
+        <ion-list>
+          <ion-item>
+            <strong>Humidity:</strong> {{weather.main.humidity}}
+          </ion-item>
+          <ion-item>
+            <strong>Wind Speed:</strong> {{weather.wind.speed}} mps
+          </ion-item>
+          <ion-item>
+            <strong>Visibility</strong> {{weather.visibility}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

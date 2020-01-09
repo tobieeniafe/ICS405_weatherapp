@@ -1,16 +1,53 @@
-// http://ionicframework.com/docs/theming/
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/fonts/Raleway-Regular.ttf');
+}
 
+*{
+	font-family: "Raleway";
+}
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+.background{
+	background: color($colors, primary);
+	//background: linear-gradient(to bottom, #fff 0%, #6495ed 100%);
+	color: color($colors, light);
+	margin-top: 25px;
+}
+
+.home{
+	background: color($colors, primary);
+	//background: linear-gradient(to bottom, #6495ed 0%, #fff 100%);
+	color: color($colors, light);
+	margin-top: 25px;
+}
+
+.toolbar-title{
+	text-align: center;
+	font-weight: bold;
+}
+
+.tabs-md .tab-button-icon{
+	color: #ccc;
+}
+
+.temp{
+	font-size: 90px;
+	text-align: center;
+	font-weight: lighter !important;
+}
+
+.location, .icon, .desc{
+	text-align: center;
+}
+
+.icon img{
+	width: 150px;
+}
+
+.location{
+	font-size: 40px;
+}
+
+.desc{
+	font-size: 30px;
+}

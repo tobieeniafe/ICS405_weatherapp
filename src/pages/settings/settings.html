@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background">
+	<ion-grid>
+		<ion-row>
+			<ion-col width-100>
+				<ion-list>
+					<form (ngSubmit)="saveForm()">
+						<ion-item>
+							<ion-label fixed>City</ion-label>
+							<ion-input [(ngModel)]="city" name="city" type="text"></ion-input>
+						</ion-item>
+						<!-- <ion-item>
+							<ion-label fixed>State</ion-label>
+							<ion-input [(ngModel)]="state" name="state" type="text"></ion-input>
+						</ion-item> -->
+						<button ion-button type="submit" block style="background-color: #406BB8; color: #fff">Update Location</button>
+					</form>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>
